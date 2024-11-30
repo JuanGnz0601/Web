@@ -15,91 +15,33 @@
 </head>
 
 <body>
-  <div class="header">
-    <h1>SUBLI-ART</h1>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-      <div class="container-fluid">
-        <a href="/index.html"><img class="header-logo" src="/img/Logo.PNG" alt=""></a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
-          aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-            <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="/index.html">Ofertas</a>
-            </li>
-            <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
-                aria-expanded="false">
-                Categorias
-              </a>
-              <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-
-                <!-- Submenú Camisetas -->
-                <li class="dropdown-submenu">
-                  <a class="dropdown-item dropdown-toggle" href="#">Camisetas</a>
-                  <ul class="dropdown-menu">
-                    <li><a class="dropdown-item" href="#">Damas</a></li>
-                    <li><a class="dropdown-item" href="#">Caballeros</a></li>
-                    <li><a class="dropdown-item" href="#">Niños</a></li>
-                  </ul>
-                </li>
-
-                <!-- Submenú Gorras -->
-                <li class="dropdown-submenu">
-                  <a class="dropdown-item dropdown-toggle" href="#">Gorras</a>
-                  <ul class="dropdown-menu">
-                    <li><a class="dropdown-item" href="#">Tela</a></li>
-                    <li><a class="dropdown-item" href="#">Malla</a></li>
-                  </ul>
-                </li>
-
-                <!-- Submenú Mug -->
-                <li class="dropdown-submenu">
-                  <a class="dropdown-item dropdown-toggle" href="#">Mug</a>
-                  <ul class="dropdown-menu">
-                    <li><a class="dropdown-item" href="#">Blancos</a></li>
-                    <li><a class="dropdown-item" href="#">Mágicos</a></li>
-                    <li><a class="dropdown-item" href="#">Plateados</a></li>
-                  </ul>
-                </li>
-
-              </ul>
-            </li>
-
-            <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
-                aria-expanded="false">
-                Carrito
-              </a>
-              <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <li><a class="dropdown-item" href="/pages/carrito.html">Carrito</a></li>
-                <li><a class="dropdown-item" href="/pages/histcarrito.html">Historial</a></li>
-              </ul>
-            </li>
-          </ul>
-          <form class="d-flex">
-            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-            <button class="btn btn-outline-success me-2" type="submit">Buscar</button>
+  <div class="container">
+    <div class="header">
+      <a href="/pages/ofertas.html"><img class="inicio" src="/img/personaliza ideas.png" alt="Personaliza tus ideas"></a>
+      <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+          <a href="/index.html"><img class="header-logo" src="/img/SUBLI-ART.png" alt=""></a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link active fw-bold text-primary" aria-current="page" href="/index.html">Ofertas</a>
+              </li>
+            </ul>
+            <form class="d-flex">
+              <input class="form-control me-2" type="search" placeholder="Buscar" aria-label="Search">
+              <button class="btn btn-outline-success me-2" type="submit">Buscar</button>
               <a href="/pages/carrito.html" class="btn btn-outline-success">
                 <i class="bi bi-cart-check"></i>
               </a>
-          </form>
+            </form>
+          </div>
         </div>
-      </div>
-    </nav>
-  </div>
-
-  <div class="slider-container">
-    <button class="prev" onclick="moveSlide(-1)">&#10094;</button>
-    <div class="slider">
-      <img class="slides" src="/img/camisetas/01.jpeg" alt="Camiseta 1">
-      <img class="slides" src="/img/camisetas/02.jpeg" alt="Camiseta 2">
-      <img class="slides" src="/img/camisetas/03.jpeg" alt="Camiseta 3">
+      </nav>
     </div>
-    <button class="next" onclick="moveSlide(1)">&#10095;</button>
-  </div>
     <div class="cart-container">
         <h2>Carrito de Compras</h2>
         <table>
@@ -141,12 +83,15 @@
     
         <div class="cart-summary">
             <p><strong>Subtotal:</strong> $180,000 COP</p>
-            <button>Proceder al Pago</button>
+            <button class="btn btn-primary">Proceder al Pago</button>
         </div>
     </div><hr>
-    <div class="footer">
-        <p>¿Quiénes Somos? - Servicio al Cliente</p>
-      </div>
+     <!-- footer -->
+  <div class="footer text-center mt-4">
+    <p><a href="/pages/quienes-somos.html">¿Quiénes Somos?</a> | <a href="/pages/servicio-cliente.html">Servicio al Cliente</a></p>
+    <p>&copy; 2024 SUBLI-ART. Todos los derechos reservados.</p>
+  </div>
+    </div>
       <script src="script.js"></script>
     </body>
     
