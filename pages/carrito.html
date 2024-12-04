@@ -14,29 +14,38 @@
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/8.1.0/mdb.umd.min.js"></script>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
   <title>SUBLI-ART</title>
-  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="/css/styles.css">
+  <style>
+    .toast {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      z-index: 1050;
+    }
+  </style>
 </head>
 
 <body>
+
   <!-- Header y navegación -->
   <div class="header">
-    <a href="index.html"><img class="inicio" src="img/personaliza ideas.png" alt="Personaliza tus ideas"></a>
+    <a href="../index.html"><img class="inicio" src="../img/personaliza ideas.png" alt="Personaliza tus ideas"></a>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
       <div class="container-fluid">
-        <a href="index.html"><img class="header-logo" src="img/SUBLI-ART.png" alt=""></a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-          data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
-          aria-label="Toggle navigation">
+        <a href="../index.html"><img class="header-logo" src="../img/SUBLI-ART.png" alt=""></a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav me-auto mb-2 mb-lg-0">
             <li class="nav-item">
-              <a class="nav-link active fw-bold text-primary" aria-current="page" href="index.html">Inicio</a>
+              <a class="nav-link active fw-bold text-primary" aria-current="page" href="../index.html">Inicio</a>
             </li>
           </ul>
           <form class="d-flex" id="searchForm">
-            <input class="form-control me-2" type="search" id="searchInput" placeholder="Buscar" aria-label="Search" required>
+            <input class="form-control me-2" type="search" id="searchInput" placeholder="Buscar" aria-label="Search"
+              required>
             <button class="btn btn-outline-success me-2" type="submit">Buscar</button>
             <a href="pages/carrito.html" class="btn btn-outline-success">
               <i class="bi bi-cart-check"></i>
@@ -47,203 +56,178 @@
     </nav>
   </div>
   <hr>
-      <!-- carousel -->
-      <div class="carusel ">
-      <div id="carouselExampleControls" class="carousel slide " data-bs-ride="carousel">
-        <div class="carousel-inner">
-          <div class="carousel-item active">
-            <a href="pages/camisetas/Hombre1.html"><img src="img/carrusel/200.png" class="d-block w-100" alt="..."></a>
-          </div>
-          <div class="carousel-item">
-            <a href="pages/camisetas/Hombre1.html"><img src="img/carrusel/201.png" class="d-block w-100" alt="..."></a>
-          </div>
-          <div class="carousel-item">
-            <a href="pages/camisetas/Hombre1.html"><img src="img/carrusel/202.png" class="d-block w-100" alt="..."></a>
-          </div>
+
+  <div class="container mt-5">
+    <h2>Carrito de Compras</h2>
+    <table class="table-success table-striped">
+      <thead>
+        <tr>
+          <th>Imagen</th>
+          <th>Producto</th>
+          <th>Precio</th>
+          <th>Cantidad</th>
+          <th>Tamaño</th>
+          <th>Subtotal</th>
+          <th>Acciones</th>
+        </tr>
+      </thead>
+      <tbody id="cart-table">
+        <!-- Los productos se agregarán aquí -->
+      </tbody>
+    </table>
+    <button id="emptyCart" class="btn btn-danger">Vaciar Carrito</button>
+    <button id="buyNow" class="btn btn-success">Comprar Ahora</button>
+    <button id="viewHistory" class="btn btn-info" data-bs-toggle="modal" data-bs-target="#historyModal">Ver Historial de Compras</button>
+  </div>
+
+  <!-- Toast de agradecimiento -->
+  <div id="thankYouToast" class="toast" style="display: none;">
+    <div class="toast-body bg-success text-white">
+      ¡Gracias por su compra!
+    </div>
+  </div>
+
+  <!-- Modal para el historial de compras -->
+  <div class="modal fade" id="historyModal" tabindex="-1" aria-labelledby="historyModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="historyModalLabel">Historial de Compras</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
-        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls"
-          data-bs-slide="prev">
-          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Previous</span>
-        </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls"
-          data-bs-slide="next">
-          <span class="carousel-control-next-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Next</span>
-        </button>
-      </div>
-    </div>
-
-  <!-- Contenido principal -->
-  <div class="content-container">
-    <!-- Filtros -->
-    <div class="filters">
-      <p>Filtros</p>
-      <a class="btn filter-btn" data-category="all">Todos</a>
-      <a class="btn filter-btn " data-category="camisetas">Camisetas</a>
-      <a class="btn filter-btn" data-category="gorras">Gorras</a>
-      <a class="btn  filter-btn" data-category="mugs">Mugs</a>
-    </div>
-
- <!-- cards -->
- <div class="row mt-3">
-  <div class="col-12 col-md-6 col-lg-3 product-card camisetas">
-<div class="card">
-<img src="img/camisetas/hombres/1.png" class="card-img-top border" alt="Camiseta blanca de algodón">
-<div class="card-body">
-  <h5 class="card-title">Camiseta Hombre</h5>
-  <p class="card-text">$ 20.000</p>
-  <button class="btn btn-primary">Agregar al Carrito</button>
-</div>
-</div>
-</div>
-
-<div class="col-12 col-md-6 col-lg-3 product-card gorras">
-<div class="card">
-<img src="img/gorras/6.png" class="card-img-top border" alt="Gorra malla">
-<div class="card-body">
-  <h5 class="card-title">Gorra malla</h5>
-  <p class="card-text">$ 12.000</p>
-  <button class="btn btn-primary">Agregar al Carrito</button>
-</div>
-</div>
-</div>
-
-<div class="col-12 col-md-6 col-lg-3 product-card camisetas">
-<div class="card">
-<img src="img/camisetas/dama/1.png" class="card-img-top border" alt="Camiseta blanca de algodón">
-<div class="card-body">
-  <h5 class="card-title">Camiseta Hombre</h5>
-  <p class="card-text">$ 20.000</p>
-  <button class="btn btn-primary">Agregar al Carrito</button>
-</div>
-</div>
-</div>
-
-<div class="col-12 col-md-6 col-lg-3 product-card mugs">
-<div class="card">
-<img src="img/mugs/Blancos/1.png" class="card-img-top border" alt="Mug Dibujos">
-<div class="card-body">
-  <h5 class="card-title">Mug Dibujos</h5>
-  <p class="card-text">$ 15.000</p>
-  <button class="btn btn-primary">Agregar al Carrito</button>
-</div>
-</div>
-</div>
-
-  <div class="col-12 col-md-6 col-lg-3 product-card camisetas">
-    <div class="card">
-      <img src="img/camisetas/niños/1.png" class="card-img-top border" alt="Camiseta blanca de algodón">
-      <div class="card-body">
-        <h5 class="card-title">Camiseta Niño</h5>
-        <p class="card-text">$ 20.000</p>
-        <button class="btn btn-primary">Agregar al Carrito</button>
-      </div>
-    </div>
-  </div>
-
-  <div class="col-12 col-md-6 col-lg-3 product-card gorras">
-    <div class="card">
-      <img src="img/gorras/1.png" class="card-img-top border" alt="Gorra malla">
-      <div class="card-body">
-        <h5 class="card-title">Gorra malla</h5>
-        <p class="card-text">$ 12.000</p>
-        <button class="btn btn-primary">Agregar al Carrito</button>
-      </div>
-    </div>
-  </div>
-
-  <div class="col-12 col-md-6 col-lg-3 product-card camisetas">
-    <div class="card">
-      <img src="img/camisetas/hombres/2.png" class="card-img-top border" alt="Camiseta blanca de algodón">
-      <div class="card-body">
-        <h5 class="card-title">Camiseta Hombre</h5>
-        <p class="card-text">$ 20.000</p>
-        <button class="btn btn-primary">Agregar al Carrito</button>
-      </div>
-    </div>
-  </div>
-
-  <div class="col-12 col-md-6 col-lg-3 product-card mugs">
-    <div class="card">
-      <img src="img/mugs/Plateados/1.png" class="card-img-top border" alt="Mug Dibujos">
-      <div class="card-body">
-        <h5 class="card-title">Mug Dibujos</h5>
-        <p class="card-text">$ 15.000</p>
-        <button class="btn btn-primary">Agregar al Carrito</button>
-      </div>
-    </div>
-  </div>
-</div>
-</div>
-<hr>
-
- <!-- footer -->
- <div class="row mt-3">
- <footer>
-  <section class="">
-    <div class="container text-center text-md-start mt-5">
-      <div class="row mt-3">
-        <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
-          <h6 class="text-uppercase fw-bold mb-4">
-            <i class="fas fa-gem me-3"></i>SUBLI-ART
-          </h6>
-          <p class="quienes-somos">
-            Somos una empresa apasionada por la personalización de productos. Ayudamos a nuestros clientes a dar
-            vida a sus ideas creando camisetas, gorras y mugs únicos y personalizados.
-          </p>
+        <div class="modal-body">
+          <table class="table table-striped">
+            <thead>
+              <tr>
+                <th>Fecha</th>
+                <th>Producto</th>
+                <th>Cantidad</th>
+                <th>Precio</th>
+                <th>Total</th>
+              </tr>
+            </thead>
+            <tbody id="history-table">
+              <!-- Los datos de compras se agregarán aquí -->
+            </tbody>
+          </table>
         </div>
-        <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
-          <!-- Links -->
-          <h6 class="text-uppercase fw-bold mb-4">
-            Product0s
-          </h6>
-          <p>
-            <a href="#!" class="text-reset">Camisetas</a>
-          </p>
-          <p>
-            <a href="#!" class="text-reset">Gorras</a>
-          </p>
-          <p>
-            <a href="#!" class="text-reset">Mug</a>
-          </p>
-        </div>
-        <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
-          <!-- Links -->
-          <h6 class="text-uppercase fw-bold mb-4">Contacto</h6>
-          <p><i class="fas fa-home me-3"></i> Sahagun, Cordoba, Colombia</p>
-          <p>
-            <i class="fas fa-envelope me-3"></i>
-            infosubli-art@gmail.com.com
-          </p>
-          <p><i class="fas fa-phone me-3"></i> + 57 234 567 88</p>
-          <a href="https://www.facebook.com/" class="me-4 text-reset" target="_blank">
-            <i class="fab fa-facebook-f"></i>
-          </a>
-          <a href="https://x.com/" class="me-4 text-reset" target="_blank">
-            <i class="fab fa-twitter"></i>
-          </a>
-          <a href="https://www.instagram.com/" class="me-4 text-reset" target="_blank">
-            <i class="fab fa-instagram"></i>
-          </a>
-          <a href="https://co.linkedin.com/" class="me-4 text-reset" target="_blank">
-            <i class="fab fa-linkedin"></i>
-          </a>
-          <a href="https://github.com/" class="me-4 text-reset" target="_blank">
-            <i class="fab fa-github"></i>
-          </a>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
         </div>
       </div>
     </div>
-  </section>
-  <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.05);">
-    © 2024 Copyright:
-    <a class="text-reset fw-bold" href="https://juangnz0601.github.io/Web/">https://juangnz0601.github.io/Web/</a>
   </div>
-</footer>
-</div>
 
-  <script src="script.js"></script>
+  <script>
+    // Cargar carrito y historial desde localStorage
+    let cart = JSON.parse(localStorage.getItem('cart')) || [];
+    let purchaseHistory = JSON.parse(localStorage.getItem('purchaseHistory')) || [];
+
+    const cartTable = document.getElementById('cart-table');
+    const emptyCartButton = document.getElementById('emptyCart');
+    const buyNowButton = document.getElementById('buyNow');
+    const viewHistoryButton = document.getElementById('viewHistory');
+    const thankYouToast = document.getElementById('thankYouToast');
+    const historyTable = document.getElementById('history-table');
+
+    // Mostrar productos en el carrito
+    function renderCart() {
+      cartTable.innerHTML = '';
+      let totalPrice = 0;
+
+      if (cart.length === 0) {
+        cartTable.innerHTML = '<tr><td colspan="7" class="text-center">No hay productos en el carrito.</td></tr>';
+      } else {
+        cart.forEach((product, index) => {
+          const subtotal = product.price * product.quantity;
+          totalPrice += subtotal;
+
+          const row = document.createElement('tr');
+          
+          row.innerHTML = `
+            <td><img src="${product.image}" class="img-fluid" style="width: 50px;"></td>
+            <td>${product.title}</td>
+            <td>$${product.price}</td>
+            <td>${product.quantity}</td>
+            <td>${product.size}</td>
+            <td>$${subtotal}</td>
+            <td><button class="btn btn-danger btn-sm" onclick="removeFromCart(${index})">Eliminar</button></td>
+          `;
+          
+          cartTable.appendChild(row);
+        });
+      }
+
+      // Actualizar el total
+      const totalRow = document.createElement('tr');
+      totalRow.innerHTML = `
+        <td colspan="5" class="text-end"><strong>Total:</strong></td>
+        <td colspan="2">$${totalPrice}</td>
+      `;
+      cartTable.appendChild(totalRow);
+    }
+
+    // Eliminar producto individual
+    function removeFromCart(index) {
+      cart.splice(index, 1); // Eliminar el producto del carrito
+      localStorage.setItem('cart', JSON.stringify(cart)); // Guardar cambios en localStorage
+      renderCart(); // Volver a renderizar el carrito
+    }
+
+    // Vaciar carrito
+    emptyCartButton.addEventListener('click', () => {
+      cart = []; // Limpiar carrito
+      localStorage.setItem('cart', JSON.stringify(cart)); // Guardar cambios en localStorage
+      renderCart(); // Volver a renderizar el carrito
+    });
+
+    // Comprar ahora (guardar en historial y mostrar mensaje)
+    buyNowButton.addEventListener('click', () => {
+      if (cart.length > 0) {
+        purchaseHistory.push({
+          date: new Date().toLocaleString(),
+          items: cart,
+        });
+        localStorage.setItem('purchaseHistory', JSON.stringify(purchaseHistory));
+        
+        // Vaciar carrito después de la compra
+        cart = [];
+        localStorage.setItem('cart', JSON.stringify(cart));
+        renderCart();
+        
+        // Mostrar mensaje de agradecimiento
+        const toast = new bootstrap.Toast(thankYouToast);
+        toast.show();
+      }
+    });
+
+    // Ver historial de compras
+    viewHistoryButton.addEventListener('click', () => {
+      historyTable.innerHTML = ''; // Limpiar tabla de historial
+
+      if (purchaseHistory.length === 0) {
+        historyTable.innerHTML = '<tr><td colspan="5" class="text-center">No hay historial de compras.</td></tr>';
+      } else {
+        purchaseHistory.forEach(purchase => {
+          purchase.items.forEach(item => {
+            const row = document.createElement('tr');
+            row.innerHTML = `
+              <td>${purchase.date}</td>
+              <td>${item.title}</td>
+              <td>${item.quantity}</td>
+              <td>$${item.price}</td>
+              <td>$${item.quantity * item.price}</td>
+            `;
+            historyTable.appendChild(row);
+          });
+        });
+      }
+    });
+
+    // Inicializar
+    renderCart();
+  </script>
+
 </body>
 
 </html>

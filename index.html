@@ -15,6 +15,7 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
   <title>SUBLI-ART</title>
   <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/sidebars.css">
 </head>
 
 <body>
@@ -24,9 +25,8 @@
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
       <div class="container-fluid">
         <a href="index.html"><img class="header-logo" src="img/SUBLI-ART.png" alt=""></a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-          data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
-          aria-label="Toggle navigation">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
@@ -36,7 +36,8 @@
             </li>
           </ul>
           <form class="d-flex" id="searchForm">
-            <input class="form-control me-2" type="search" id="searchInput" placeholder="Buscar" aria-label="Search" required>
+            <input class="form-control me-2" type="search" id="searchInput" placeholder="Buscar" aria-label="Search"
+              required>
             <button class="btn btn-outline-success me-2" type="submit">Buscar</button>
             <a href="pages/carrito.html" class="btn btn-outline-success">
               <i class="bi bi-cart-check"></i>
@@ -47,202 +48,549 @@
     </nav>
   </div>
   <hr>
-      <!-- carousel -->
-      <div class="carusel ">
-      <div id="carouselExampleControls" class="carousel slide " data-bs-ride="carousel">
-        <div class="carousel-inner">
-          <div class="carousel-item active">
-            <a href="pages/camisetas/Hombre1.html"><img src="img/carrusel/200.png" class="d-block w-100" alt="..."></a>
-          </div>
-          <div class="carousel-item">
-            <a href="pages/camisetas/Hombre1.html"><img src="img/carrusel/201.png" class="d-block w-100" alt="..."></a>
-          </div>
-          <div class="carousel-item">
-            <a href="pages/camisetas/Hombre1.html"><img src="img/carrusel/202.png" class="d-block w-100" alt="..."></a>
-          </div>
+  <!-- carousel -->
+  <div class="carusel ">
+    <div id="carouselExampleControls" class="carousel slide " data-bs-ride="carousel">
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <a href="pages/camisetas/Hombre1.html"><img src="img/carrusel/200.png" class="d-block w-100" alt="..."></a>
         </div>
-        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls"
-          data-bs-slide="prev">
-          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Previous</span>
-        </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls"
-          data-bs-slide="next">
-          <span class="carousel-control-next-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Next</span>
-        </button>
+        <div class="carousel-item">
+          <a href="pages/camisetas/Hombre1.html"><img src="img/carrusel/201.png" class="d-block w-100" alt="..."></a>
+        </div>
+        <div class="carousel-item">
+          <a href="pages/camisetas/Hombre1.html"><img src="img/carrusel/202.png" class="d-block w-100" alt="..."></a>
+        </div>
       </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls"
+        data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls"
+        data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
     </div>
+  </div>
 
   <!-- Contenido principal -->
   <div class="content-container">
     <!-- Filtros -->
     <div class="filters">
-      <p>Filtros</p>
-      <a class="btn filter-btn" data-category="all">Todos</a>
-      <a class="btn filter-btn " data-category="camisetas">Camisetas</a>
-      <a class="btn filter-btn" data-category="gorras">Gorras</a>
-      <a class="btn  filter-btn" data-category="mugs">Mugs</a>
+      <p><strong>Filtros</strong></p>
+      <ul class="list-unstyled ps-0">
+
+        <li class="mb-1">
+          <a class="btn filter-btn" data-category="all"><strong>Todos</strong></a>
+          <button class="btn btn-toggle align-items-center rounded collapsed filter-btn" data-category="camisetas"
+            data-bs-toggle="collapse" data-bs-target="#home-collapse">
+            Camiseta
+          </button>
+          <div class="collapse show" id="home-collapse">
+            <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+              <li><a class="btn filter-btn" data-category="camisetas" data-subcategory="caballero">Caballeros</a></li>
+              <li><a class="btn filter-btn" data-category="camisetas" data-subcategory="dama">Damas</a></li>
+              <li><a class="btn filter-btn" data-category="camisetas" data-subcategory="niño">Niños</a></li>
+            </ul>
+          </div>
+        </li>
+        <li class="mb-1">
+          <button class="btn btn-toggle align-items-center rounded collapsed filter-btn" data-category="gorras"
+            data-bs-toggle="collapse" data-bs-target="#dashboard-collapse">
+            Gorras
+          </button>
+          <div class="collapse" id="dashboard-collapse">
+            <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+              <li><a class="btn filter-btn" data-category="gorras" data-subcategory="malla">Malla</a></li>
+              <li><a class="btn filter-btn" data-category="gorras" data-subcategory="tela">Tela</a></li>
+            </ul>
+          </div>
+        </li>
+        <li class="mb-1">
+          <button class="btn btn-toggle align-items-center rounded collapsed filter-btn" data-bs-toggle="collapse"
+            data-category="mugs" data-bs-target="#orders-collapse">
+            Mugs
+          </button>
+          <div class="collapse" id="orders-collapse">
+            <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+              <li><a class="btn filter-btn" data-category="mugs" data-subcategory="blanco">Blancos</a></li>
+              <li><a class="btn filter-btn" data-category="mugs" data-subcategory="magicos">Magicos</a></li>
+              <li><a class="btn filter-btn" data-category="mugs" data-subcategory="plateados">Plateados</a></li>
+            </ul>
+          </div>
+        </li>
+
+
+        <label for="customRange2" class="form-label"><strong>Filtrar por precio</strong></label>
+        <input type="range" class="form-range" min="0" max="20000" step="5000" id="customRange2" value="20000">
+        <p id="price-label">Precio máximo: $20.000</p>
+      </ul>
+
     </div>
 
- <!-- cards -->
- <div class="row mt-3">
-  <div class="col-12 col-md-6 col-lg-3 product-card camisetas">
-<div class="card">
-<img src="img/camisetas/hombres/1.png" class="card-img-top border" alt="Camiseta blanca de algodón">
-<div class="card-body">
-  <h5 class="card-title">Camiseta Hombre</h5>
-  <p class="card-text">$ 20.000</p>
-  <button class="btn btn-primary">Comprar</button>
-</div>
-</div>
-</div>
-
-<div class="col-12 col-md-6 col-lg-3 product-card gorras">
-<div class="card">
-<img src="img/gorras/6.png" class="card-img-top border" alt="Gorra malla">
-<div class="card-body">
-  <h5 class="card-title">Gorra malla</h5>
-  <p class="card-text">$ 12.000</p>
-  <button class="btn btn-primary">Comprar</button>
-</div>
-</div>
-</div>
-
-<div class="col-12 col-md-6 col-lg-3 product-card camisetas">
-<div class="card">
-<img src="img/camisetas/dama/1.png" class="card-img-top border" alt="Camiseta blanca de algodón">
-<div class="card-body">
-  <h5 class="card-title">Camiseta Hombre</h5>
-  <p class="card-text">$ 20.000</p>
-  <button class="btn btn-primary">Comprar</button>
-</div>
-</div>
-</div>
-
-<div class="col-12 col-md-6 col-lg-3 product-card mugs">
-<div class="card">
-<img src="img/mugs/Blancos/1.png" class="card-img-top border" alt="Mug Dibujos">
-<div class="card-body">
-  <h5 class="card-title">Mug Dibujos</h5>
-  <p class="card-text">$ 15.000</p>
-  <button class="btn btn-primary">Comprar</button>
-</div>
-</div>
-</div>
-
-  <div class="col-12 col-md-6 col-lg-3 product-card camisetas">
-    <div class="card">
-      <img src="img/camisetas/niños/1.png" class="card-img-top border" alt="Camiseta blanca de algodón">
-      <div class="card-body">
-        <h5 class="card-title">Camiseta Niño</h5>
-        <p class="card-text">$ 20.000</p>
-        <button class="btn btn-primary">Comprar</button>
-      </div>
+    <div id="no-products-message" style="display: none; color: red; font-weight: bold;">
+      No hay productos disponibles en este rango de precios.
     </div>
-  </div>
 
-  <div class="col-12 col-md-6 col-lg-3 product-card gorras">
-    <div class="card">
-      <img src="img/gorras/1.png" class="card-img-top border" alt="Gorra malla">
-      <div class="card-body">
-        <h5 class="card-title">Gorra malla</h5>
-        <p class="card-text">$ 12.000</p>
-        <button class="btn btn-primary">Comprar</button>
-      </div>
-    </div>
-  </div>
-
-  <div class="col-12 col-md-6 col-lg-3 product-card camisetas">
-    <div class="card">
-      <img src="img/camisetas/hombres/2.png" class="card-img-top border" alt="Camiseta blanca de algodón">
-      <div class="card-body">
-        <h5 class="card-title">Camiseta Hombre</h5>
-        <p class="card-text">$ 20.000</p>
-        <button class="btn btn-primary">Comprar</button>
-      </div>
-    </div>
-  </div>
-
-  <div class="col-12 col-md-6 col-lg-3 product-card mugs">
-    <div class="card">
-      <img src="img/mugs/Plateados/1.png" class="card-img-top border" alt="Mug Dibujos">
-      <div class="card-body">
-        <h5 class="card-title">Mug Dibujos</h5>
-        <p class="card-text">$ 15.000</p>
-        <button class="btn btn-primary">Comprar</button>
-      </div>
-    </div>
-  </div>
-</div>
-</div>
-<hr>
-
- <!-- footer -->
- <div class="row mt-3">
- <footer>
-  <section class="">
-    <div class="container text-center text-md-start mt-5">
-      <div class="row mt-3">
-        <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
-          <h6 class="text-uppercase fw-bold mb-4">
-            <i class="fas fa-gem me-3"></i>SUBLI-ART
-          </h6>
-          <p class="quienes-somos">
-            Somos una empresa apasionada por la personalización de productos. Ayudamos a nuestros clientes a dar
-            vida a sus ideas creando camisetas, gorras y mugs únicos y personalizados.
-          </p>
-        </div>
-        <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
-          <!-- Links -->
-          <h6 class="text-uppercase fw-bold mb-4">
-            Product0s
-          </h6>
-          <p>
-            <a href="#!" class="text-reset">Camisetas</a>
-          </p>
-          <p>
-            <a href="#!" class="text-reset">Gorras</a>
-          </p>
-          <p>
-            <a href="#!" class="text-reset">Mug</a>
-          </p>
-        </div>
-        <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
-          <!-- Links -->
-          <h6 class="text-uppercase fw-bold mb-4">Contacto</h6>
-          <p><i class="fas fa-home me-3"></i> Sahagun, Cordoba, Colombia</p>
-          <p>
-            <i class="fas fa-envelope me-3"></i>
-            infosubli-art@gmail.com.com
-          </p>
-          <p><i class="fas fa-phone me-3"></i> + 57 234 567 88</p>
-          <a href="https://www.facebook.com/" class="me-4 text-reset" target="_blank">
-            <i class="fab fa-facebook-f"></i>
-          </a>
-          <a href="https://x.com/" class="me-4 text-reset" target="_blank">
-            <i class="fab fa-twitter"></i>
-          </a>
-          <a href="https://www.instagram.com/" class="me-4 text-reset" target="_blank">
-            <i class="fab fa-instagram"></i>
-          </a>
-          <a href="https://co.linkedin.com/" class="me-4 text-reset" target="_blank">
-            <i class="fab fa-linkedin"></i>
-          </a>
-          <a href="https://github.com/" class="me-4 text-reset" target="_blank">
-            <i class="fab fa-github"></i>
-          </a>
+    <!-- cards -->
+    <div class="row mt-3">
+      <div class="col-12 col-md-6 col-lg-3 product-card camisetas caballero" data-price="20000">
+        <div class="card mb-4 mx-2">
+          <img src="img/camisetas/hombres/1.png" class="card-img-top border" alt="Camiseta blanca de algodón">
+          <div class="card-body">
+            <h5 class="card-title">Camiseta Hombre</h5>
+            <p class="card-text">$ 20.000</p>
+            <button class="btn btn-primary">Comprar</button>
+          </div>
         </div>
       </div>
-    </div>
-  </section>
-  <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.05);">
-    © 2024 Copyright:
-    <a class="text-reset fw-bold" href="https://juangnz0601.github.io/Web/">https://juangnz0601.github.io/Web/</a>
-  </div>
-</footer>
-</div>
 
+      <div class="col-12 col-md-6 col-lg-3 product-card gorras tela" data-price="12000">
+        <div class="card mb-4 mx-2">
+          <img src="img/gorras/6.png" class="card-img-top border" alt="Gorra malla">
+          <div class="card-body">
+            <h5 class="card-title">Gorra Tela</h5>
+            <p class="card-text">$ 12.000</p>
+            <button class="btn btn-primary">Comprar</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-12 col-md-6 col-lg-3 product-card camisetas dama" data-price="20000">
+        <div class="card mb-4 mx-2">
+          <img src="img/camisetas/dama/1.png" class="card-img-top border" alt="Camiseta blanca de algodón">
+          <div class="card-body">
+            <h5 class="card-title">Camiseta Dama</h5>
+            <p class="card-text">$ 20.000</p>
+            <button class="btn btn-primary">Comprar</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-12 col-md-6 col-lg-3 product-card mugs blanco" data-price="15000">
+        <div class="card mb-4 mx-2">
+          <img src="img/mugs/Blancos/1.png" class="card-img-top border" alt="Mug Dibujos">
+          <div class="card-body">
+            <h5 class="card-title">Mug Blanco</h5>
+            <p class="card-text">$ 15.000</p>
+            <button class="btn btn-primary">Comprar</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-12 col-md-6 col-lg-3 product-card camisetas niño" data-price="20000">
+        <div class="card mb-4 mx-2">
+          <img src="img/camisetas/niños/1.png" class="card-img-top border" alt="Camiseta blanca de algodón">
+          <div class="card-body">
+            <h5 class="card-title">Camiseta Niño</h5>
+            <p class="card-text">$ 20.000</p>
+            <button class="btn btn-primary">Comprar</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-12 col-md-6 col-lg-3 product-card gorras malla" data-price="15000">
+        <div class="card mb-4 mx-2">
+          <img src="img/gorras/1.png" class="card-img-top border" alt="Gorra malla">
+          <div class="card-body">
+            <h5 class="card-title">Gorra malla</h5>
+            <p class="card-text">$ 12.000</p>
+            <button class="btn btn-primary">Comprar</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-12 col-md-6 col-lg-3 product-card camisetas caballero" data-price="20000">
+        <div class="card mb-4 mx-2">
+          <img src="img/camisetas/hombres/2.png" class="card-img-top border" alt="Camiseta blanca de algodón">
+          <div class="card-body">
+            <h5 class="card-title">Camiseta Hombre</h5>
+            <p class="card-text">$20.000</p>
+            <button class="btn btn-primary">Comprar</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-12 col-md-6 col-lg-3 product-card camisetas dama" data-price="20000">
+        <div class="card mb-4 mx-2">
+          <img src="img/camisetas/dama/2.png" class="card-img-top border" alt="Camiseta blanca de algodón">
+          <div class="card-body">
+            <h5 class="card-title">Camiseta Dama</h5>
+            <p class="card-text">$ 20.000</p>
+            <button class="btn btn-primary">Comprar</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-12 col-md-6 col-lg-3 product-card mugs plateados" data-price="15000">
+        <div class="card mb-4 mx-2">
+          <img src="img/mugs/Plateados/1.png" class="card-img-top border" alt="Mug Dibujos">
+          <div class="card-body">
+            <h5 class="card-title">Mug Plateado</h5>
+            <p class="card-text">$ 15.000</p>
+            <button class="btn btn-primary">Comprar</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-12 col-md-6 col-lg-3 product-card gorras malla" data-price="15000">
+        <div class="card mb-4 mx-2">
+          <img src="img/gorras/2.png" class="card-img-top border" alt="Gorra malla">
+          <div class="card-body">
+            <h5 class="card-title">Gorra malla</h5>
+            <p class="card-text">$ 12.000</p>
+            <button class="btn btn-primary">Comprar</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-12 col-md-6 col-lg-3 product-card mugs plateados" data-price="15000">
+        <div class="card mb-4 mx-2">
+          <img src="img/mugs/Plateados/2.png" class="card-img-top border" alt="Mug Dibujos">
+          <div class="card-body">
+            <h5 class="card-title">Mug Plateado</h5>
+            <p class="card-text">$ 15.000</p>
+            <button class="btn btn-primary">Comprar</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-12 col-md-6 col-lg-3 product-card camisetas niño" data-price="20000">
+        <div class="card mb-4 mx-2">
+          <img src="img/camisetas/niños/2.png" class="card-img-top border" alt="Camiseta blanca de algodón">
+          <div class="card-body">
+            <h5 class="card-title">Camiseta Niño</h5>
+            <p class="card-text">$ 20.000</p>
+            <button class="btn btn-primary">Comprar</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-12 col-md-6 col-lg-3 product-card mugs plateados" data-price="15000">
+        <div class="card mb-4 mx-2">
+          <img src="img/mugs/Plateados/3.png" class="card-img-top border" alt="Mug Dibujos">
+          <div class="card-body">
+            <h5 class="card-title">Mug Plateado</h5>
+            <p class="card-text">$ 15.000</p>
+            <button class="btn btn-primary">Comprar</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-12 col-md-6 col-lg-3 product-card mugs plateados" data-price="15000">
+        <div class="card mb-4 mx-2">
+          <img src="img/mugs/Plateados/4.png" class="card-img-top border" alt="Mug Dibujos">
+          <div class="card-body">
+            <h5 class="card-title">Mug Plateado</h5>
+            <p class="card-text">$ 15.000</p>
+            <button class="btn btn-primary">Comprar</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-12 col-md-6 col-lg-3 product-card gorras malla" data-price="15000">
+        <div class="card mb-4 mx-2">
+          <img src="img/gorras/3.png" class="card-img-top border" alt="Gorra malla">
+          <div class="card-body">
+            <h5 class="card-title">Gorra malla</h5>
+            <p class="card-text">$ 12.000</p>
+            <button class="btn btn-primary">Comprar</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-12 col-md-6 col-lg-3 product-card camisetas dama" data-price="20000">
+        <div class="card mb-4 mx-2">
+          <img src="img/camisetas/dama/3.png" class="card-img-top border" alt="Camiseta blanca de algodón">
+          <div class="card-body">
+            <h5 class="card-title">Camiseta Dama</h5>
+            <p class="card-text">$ 20.000</p>
+            <button class="btn btn-primary">Comprar</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-12 col-md-6 col-lg-3 product-card mugs blanco" data-price="15000">
+        <div class="card mb-4 mx-2">
+          <img src="img/mugs/Blancos/2.png" class="card-img-top border" alt="Mug Dibujos">
+          <div class="card-body">
+            <h5 class="card-title">Mug Blanco</h5>
+            <p class="card-text">$ 15.000</p>
+            <button class="btn btn-primary">Comprar</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-12 col-md-6 col-lg-3 product-card mugs blanco" data-price="15000">
+        <div class="card mb-4 mx-2">
+          <img src="img/mugs/Blancos/3.png" class="card-img-top border" alt="Mug Dibujos">
+          <div class="card-body">
+            <h5 class="card-title">Mug Blanco</h5>
+            <p class="card-text">$ 15.000</p>
+            <button class="btn btn-primary">Comprar</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-12 col-md-6 col-lg-3 product-card mugs blanco" data-price="15000">
+        <div class="card mb-4 mx-2">
+          <img src="img/mugs/Blancos/4.png" class="card-img-top border" alt="Mug Dibujos">
+          <div class="card-body">
+            <h5 class="card-title">Mug Blanco</h5>
+            <p class="card-text">$ 15.000</p>
+            <button class="btn btn-primary">Comprar</button>
+          </div>
+        </div>
+      </div>
+      <div class="col-12 col-md-6 col-lg-3 product-card camisetas dama" data-price="20000">
+        <div class="card mb-4 mx-2">
+          <img src="img/camisetas/dama/4.png" class="card-img-top border" alt="Camiseta blanca de algodón">
+          <div class="card-body">
+            <h5 class="card-title">Camiseta Dama</h5>
+            <p class="card-text">$ 20.000</p>
+            <button class="btn btn-primary">Comprar</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-12 col-md-6 col-lg-3 product-card camisetas niño" data-price="20000">
+        <div class="card mb-4 mx-2">
+          <img src="img/camisetas/niños/3.png" class="card-img-top border" alt="Camiseta blanca de algodón">
+          <div class="card-body">
+            <h5 class="card-title">Camiseta Niño</h5>
+            <p class="card-text">$ 20.000</p>
+            <button class="btn btn-primary">Comprar</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-12 col-md-6 col-lg-3 product-card camisetas caballero" data-price="20000">
+        <div class="card mb-4 mx-2">
+          <img src="img/camisetas/hombres/3.png" class="card-img-top border" alt="Camiseta blanca de algodón">
+          <div class="card-body">
+            <h5 class="card-title">Camiseta Hombre</h5>
+            <p class="card-text">$20.000</p>
+            <button class="btn btn-primary">Comprar</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-12 col-md-6 col-lg-3 product-card mugs magicos" data-price="15000">
+        <div class="card mb-4 mx-2">
+          <img src="img/mugs/Magicos/1.png" class="card-img-top border" alt="Mug Dibujos">
+          <div class="card-body">
+            <h5 class="card-title">Mug Magico</h5>
+            <p class="card-text">$ 15.000</p>
+            <button class="btn btn-primary">Comprar</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-12 col-md-6 col-lg-3 product-card gorras malla" data-price="15000">
+        <div class="card mb-4 mx-2">
+          <img src="img/gorras/4.png" class="card-img-top border" alt="Gorra malla">
+          <div class="card-body">
+            <h5 class="card-title">Gorra malla</h5>
+            <p class="card-text">$ 12.000</p>
+            <button class="btn btn-primary">Comprar</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-12 col-md-6 col-lg-3 product-card mugs magicos" data-price="15000">
+        <div class="card mb-4 mx-2">
+          <img src="img/mugs/Magicos/2.png" class="card-img-top border" alt="Mug Dibujos">
+          <div class="card-body">
+            <h5 class="card-title">Mug Magicos</h5>
+            <p class="card-text">$ 15.000</p>
+            <button class="btn btn-primary">Comprar</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-12 col-md-6 col-lg-3 product-card gorras tela" data-price="15000">
+        <div class="card mb-4 mx-2">
+          <img src="img/gorras/8.png" class="card-img-top border">
+          <div class="card-body">
+            <h5 class="card-title">Gorra Tela</h5>
+            <p class="card-text">$ 15.000</p>
+            <button class="btn btn-primary">Comprar</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-12 col-md-6 col-lg-3 product-card camisetas caballero" data-price="20000">
+        <div class="card mb-4 mx-2">
+          <img src="img/camisetas/hombres/4.png" class="card-img-top border" alt="Camiseta blanca de algodón">
+          <div class="card-body">
+            <h5 class="card-title">Camiseta Hombre</h5>
+            <p class="card-text">$20.000</p>
+            <button class="btn btn-primary">Comprar</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-12 col-md-6 col-lg-3 product-card mugs magicos" data-price="15000">
+        <div class="card mb-4 mx-2">
+          <img src="img/mugs/Magicos/3.png" class="card-img-top border" alt="Mug Dibujos">
+          <div class="card-body">
+            <h5 class="card-title">Mug Magicos</h5>
+            <p class="card-text">$ 15.000</p>
+            <button class="btn btn-primary">Comprar</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-12 col-md-6 col-lg-3 product-card camisetas niño" data-price="20000">
+        <div class="card mb-4 mx-2">
+          <img src="img/camisetas/niños/4.png" class="card-img-top border" alt="Camiseta blanca de algodón">
+          <div class="card-body">
+            <h5 class="card-title">Camiseta Niño</h5>
+            <p class="card-text">$ 20.000</p>
+            <button class="btn btn-primary">Comprar</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-12 col-md-6 col-lg-3 product-card gorras tela" data-price="15000">
+        <div class="card mb-4 mx-2">
+          <img src="img/gorras/7.png" class="card-img-top border">
+          <div class="card-body">
+            <h5 class="card-title">Gorra Tela</h5>
+            <p class="card-text">$ 15.000</p>
+            <button class="btn btn-primary">Comprar</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-12 col-md-6 col-lg-3 product-card mugs magicos" data-price="15000">
+        <div class="card mb-4 mx-2">
+          <img src="img/mugs/Magicos/4.png" class="card-img-top border" alt="Mug Dibujos">
+          <div class="card-body">
+            <h5 class="card-title">Mug Magico</h5>
+            <p class="card-text">$ 15.000</p>
+            <button class="btn btn-primary">Comprar</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="pagination-container">
+        <button id="prevPage">Anterior</button>
+        <button id="nextPage">Siguiente</button>
+      </div>
+
+    </div>
+  </div>
+
+  <hr>
+  <!-- Modal -->
+  <div class="modal fade" id="productModal" tabindex="-1" aria-labelledby="productModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="productModalLabel">Detalles del Producto</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <img id="modal-product-image" src="" class="img-fluid" alt="Producto">
+          <h5 id="modal-product-title"></h5>
+          <p id="modal-product-description"></p>
+          <p><strong>Precio:</strong> $<span id="modal-product-price"></span></p>
+          <form id="modal-form">
+            <div class="mb-3">
+              <label for="modal-quantity" class="form-label">Cantidad</label>
+              <input type="number" class="form-control" id="modal-quantity" min="1" value="1">
+            </div>
+            <div class="mb-3">
+              <label for="modal-size" class="form-label">Talla</label>
+              <select class="form-select" id="modal-size">
+                <option value="Niguna">Ninguna</option>
+                <option value="S">S</option>
+                <option value="M">M</option>
+                <option value="L">L</option>
+                <option value="XL">XL</option>
+              </select>
+            </div>
+            <button type="submit" class="btn btn-primary" id="add-to-cart">Agregar al carrito</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="pagination-container text-center">
+    <ul id="pagination" class="pagination">
+    </ul>
+  </div>
+
+
+
+  <!-- footer -->
+  <div class="row mt-3">
+    <footer>
+      <section class="">
+        <div class="container text-center text-md-start mt-5">
+          <div class="row mt-3">
+            <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+              <h6 class="text-uppercase fw-bold mb-4">
+                <i class="fas fa-gem me-3"></i>SUBLI-ART
+              </h6>
+              <p class="quienes-somos">
+                Somos una empresa apasionada por la personalización de productos. Ayudamos a nuestros clientes a dar
+                vida a sus ideas creando camisetas, gorras y mugs únicos y personalizados.
+              </p>
+            </div>
+            <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+              <!-- Links -->
+              <h6 class="text-uppercase fw-bold mb-4">
+                Productos
+              </h6>
+              <p>
+                <a class="btn filter-btn" data-category="camisetas">Camisetas</a>
+              </p>
+              <p>
+                <a class="btn filter-btn" data-category="gorras">Gorras</a>
+              </p>
+              <p>
+                <a class="btn filter-btn" data-category="mugs">Mug</a>
+              </p>
+            </div>
+            <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+              <!-- Links -->
+              <h6 class="text-uppercase fw-bold mb-4">Contacto</h6>
+              <p><i class="fas fa-home me-3"></i> Sahagun, Cordoba, Colombia</p>
+              <p>
+                <i class="fas fa-envelope me-3"></i>
+                infosubli-art@gmail.com.com
+              </p>
+              <p><i class="fas fa-phone me-3"></i> + 57 234 567 88</p>
+              <a href="https://www.facebook.com/" class="me-4 text-reset" target="_blank">
+                <i class="fab fa-facebook-f"></i>
+              </a>
+              <a href="https://x.com/" class="me-4 text-reset" target="_blank">
+                <i class="fab fa-twitter"></i>
+              </a>
+              <a href="https://www.instagram.com/" class="me-4 text-reset" target="_blank">
+                <i class="fab fa-instagram"></i>
+              </a>
+              <a href="https://co.linkedin.com/" class="me-4 text-reset" target="_blank">
+                <i class="fab fa-linkedin"></i>
+              </a>
+              <a href="https://github.com/" class="me-4 text-reset" target="_blank">
+                <i class="fab fa-github"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+      <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.05);">
+        © 2024 Copyright:
+        <a class="text-reset fw-bold" href="https://juangnz0601.github.io/Web/">https://juangnz0601.github.io/Web/</a>
+      </div>
+    </footer>
+  </div>
   <script src="script.js"></script>
 </body>
 

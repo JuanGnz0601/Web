@@ -70,6 +70,7 @@ table th {
 }
 .card {
     transition: transform 0.3s, box-shadow 0.3s;
+    
 }
 
 h2 {
@@ -166,18 +167,27 @@ button:hover {
   }
 
   .filters {
-    width: 200px;
+    width: 210px;
   }
 
-  .filters button {
-    display: block;
-    width: 100%;
-    margin-bottom: 10px;
+  .product-card {
+    display: none; /* Todos los productos estarán ocultos por defecto */
   }
+  
+  .pagination-container {
+    margin-top: 20px;
+    text-align: center;
+  }
+  
+  button {
+    padding: 10px;
+    margin: 0 5px;
+    cursor: pointer;
+  }
+  
+  button:hover {
+    background-color: #ddd;
+  }
+  
 
-  .cards {
-    flex: 1;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-  }
+  
