@@ -80,12 +80,6 @@
     <button id="viewHistory" class="btn btn-info" data-bs-toggle="modal" data-bs-target="#historyModal">Ver Historial de Compras</button>
   </div>
 
-  <!-- Toast de agradecimiento -->
-  <div id="thankYouToast" class="toast" style="display: none;">
-    <div class="toast-body bg-success text-white">
-      ¡Gracias por su compra!
-    </div>
-  </div>
 
   <!-- Modal para el historial de compras -->
   <div class="modal fade" id="historyModal" tabindex="-1" aria-labelledby="historyModalLabel" aria-hidden="true">
@@ -107,7 +101,6 @@
               </tr>
             </thead>
             <tbody id="history-table">
-              <!-- Los datos de compras se agregarán aquí -->
             </tbody>
           </table>
         </div>
@@ -119,7 +112,6 @@
   </div>
 
   <script>
-    // Cargar carrito y historial desde localStorage
     let cart = JSON.parse(localStorage.getItem('cart')) || [];
     let purchaseHistory = JSON.parse(localStorage.getItem('purchaseHistory')) || [];
 
@@ -130,7 +122,6 @@
     const thankYouToast = document.getElementById('thankYouToast');
     const historyTable = document.getElementById('history-table');
 
-    // Mostrar productos en el carrito
     function renderCart() {
       cartTable.innerHTML = '';
       let totalPrice = 0;
@@ -158,7 +149,6 @@
         });
       }
 
-      // Actualizar el total
       const totalRow = document.createElement('tr');
       totalRow.innerHTML = `
         <td colspan="5" class="text-end"><strong>Total:</strong></td>
@@ -167,21 +157,19 @@
       cartTable.appendChild(totalRow);
     }
 
-    // Eliminar producto individual
     function removeFromCart(index) {
-      cart.splice(index, 1); // Eliminar el producto del carrito
-      localStorage.setItem('cart', JSON.stringify(cart)); // Guardar cambios en localStorage
-      renderCart(); // Volver a renderizar el carrito
+      cart.splice(index, 1);
+      localStorage.setItem('cart', JSON.stringify(cart));
+      renderCart();
     }
 
-    // Vaciar carrito
+
     emptyCartButton.addEventListener('click', () => {
-      cart = []; // Limpiar carrito
-      localStorage.setItem('cart', JSON.stringify(cart)); // Guardar cambios en localStorage
-      renderCart(); // Volver a renderizar el carrito
+      cart = []; 
+      localStorage.setItem('cart', JSON.stringify(cart)); 
+      renderCart();
     });
 
-    // Comprar ahora (guardar en historial y mostrar mensaje)
     buyNowButton.addEventListener('click', () => {
       if (cart.length > 0) {
         purchaseHistory.push({
@@ -190,20 +178,17 @@
         });
         localStorage.setItem('purchaseHistory', JSON.stringify(purchaseHistory));
         
-        // Vaciar carrito después de la compra
         cart = [];
         localStorage.setItem('cart', JSON.stringify(cart));
         renderCart();
         
-        // Mostrar mensaje de agradecimiento
         const toast = new bootstrap.Toast(thankYouToast);
         toast.show();
       }
     });
 
-    // Ver historial de compras
     viewHistoryButton.addEventListener('click', () => {
-      historyTable.innerHTML = ''; // Limpiar tabla de historial
+      historyTable.innerHTML = '';
 
       if (purchaseHistory.length === 0) {
         historyTable.innerHTML = '<tr><td colspan="5" class="text-center">No hay historial de compras.</td></tr>';
@@ -224,7 +209,6 @@
       }
     });
 
-    // Inicializar
     renderCart();
   </script>
 
